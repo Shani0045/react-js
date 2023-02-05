@@ -1,0 +1,77 @@
+install nodejs:
+
+npm: node packege manager
+
+opencmd type: node -v enter
+npm -v enter
+
+install react from terminal
+
+a) npm install -g create-react-app
+b) create-react-app --version
+c) create-react-app <projectname>
+d) npm start  (to run react server)
+
+React props(properties):
+    to pass data from one component to another.
+
+
+inline css:  useobject style={{'color':'red'}}
+external css: import './style.css'  in component js or jsx file.
+
+1) React hooks
+    1) useState()   : to set new value.
+    2) useEffect()  : to perform side task like setTimeout setInterval etc.
+    3) useRef()     : to perform dom manupulation like innerhtml .style etc
+    4) context API  : to pass data from one component to another component 
+    5) useContext()  : above as context api.
+    6) useMemo()     : to improve performance to stop unnessecery function call same as useEffect
+    7) useCallback() : to perform 
+    8) useReducer()  : to perform optional
+
+1.) useState()
+
+let [name setName] = useState("")
+
+2.) useEffect(function(){
+    //statement
+},[])   
+
+[] means only one time run   [data] run only for data variable
+
+3.) useRef()
+
+element = useRef("")
+
+element.current.innerHTML= '<p>hi this is shani</p>'
+
+4.) context API:
+    create, provider, consumer.
+    data = createContext() in module file
+
+    name  = useContext(data) in where is use
+
+5.) useMeno(function(){
+        //statement
+},[])
+
+
+6.) useCallback()
+
+
+2.) Pass data from child component to parent component.
+
+3.) List Rendering.
+
+4.) List and key.
+
+5.) useState hook with object
+
+6.) useState hook with array.
+
+7.) Custom hooks.
+
+8.) API integration with fetch api and axios.
+
+
+
