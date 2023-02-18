@@ -1,6 +1,6 @@
 import './content.css'
 import { data } from './content';
-import { useContext } from 'react';
+import { useContext, useReducer } from 'react';
 
 function Rightcontent(props){
     const name  = useContext(data)
@@ -9,6 +9,20 @@ function Rightcontent(props){
     fetch("https://jsonplaceholder.typicode.com/posts")
     .then(resp => resp.json())
     .then(json => console.log(json))
+
+    const initial_state = 0;
+    const reducer = (state,action)=>{
+        switch(action){
+            case "increment":
+                return state+1
+            case "decrement":
+                return state-1
+            default:
+                return state
+        }
+    }
+
+    const [current_state,dispatch] = useReducer(reducer,initial_state)
 
     return (
         <>
@@ -19,6 +33,13 @@ function Rightcontent(props){
                         <h3>{d}</h3>
                     )
                 })}
+            </div>
+
+            <div>
+                <h3>{current_state}</h3>
+                <button onClick={()=>dispatch("increment")}>Increment</button>
+                <button onClick={()=>dispatch("decrement")}>Decrement</button>
+                
             </div>
         </>
     );
